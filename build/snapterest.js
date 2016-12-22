@@ -18740,25 +18740,11 @@ if (process.env.NODE_ENV !== 'production') {
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var listOfItems = React.createElement(
-									'ul',
-									{ className: 'list-of-items' },
-									React.createElement(
-																		'li',
-																		{ className: 'item-1' },
-																		'Item 1'
-									),
-									React.createElement(
-																		'li',
-																		{ className: 'item-2' },
-																		'Item 2'
-									),
-									React.createElement(
-																		'li',
-																		{ className: 'item-3' },
-																		'Item 3'
-									)
-);
-ReactDOM.render(listOfItems, document.getElementById('react-application'));
+var h1 = React.createElement('h1', { className: 'header', key: 'header' }, 'This is React');
+var p = React.createElement('p', { className: 'content', key: 'content' }, "And that's how it works.");
+var reactFragment = [h1, p];
+var section = React.createElement('section', { className: 'container'
+}, reactFragment);
+ReactDOM.render(section, document.getElementById('react-application'));
 
 },{"react":155,"react-dom":2}]},{},[156]);
